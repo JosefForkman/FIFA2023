@@ -9,30 +9,47 @@
     - venues_id
     - Teams_id 
 
-- Teams 
-    - team_1_id (1)
-    - team_2_id (2)
+- GamesToTeams 
+    - team_id (1)
     - Game_id (1)
 
 - Team
     - name
     - abbreviation
-    - flag
+    - flagURL
     - wins
     - draws
     - losses
     - scored
     - conceded goals
 
-- Players
-    - shirt number
-    - first name
+- People
     - last name
+    - first name
+- Goalkeepers
+    - Goalkeeperstats
+    - shirt number
     - minutes played
     - matches started
-- coaches
-    - last name
-    - first name
+    - red cards
+    - yellow cards
+- Outfielders
+    - shirt number
+    - minutes played
+    - matches started
+    - red cards
+    - yellow cards
+    - shots taken
+    - goals
+    - assists
+- coaches?
+    - red cards
+    - yellow cards
+- referee?
+    - red cards
+    - yellow cards
+    - free kicks
+    - penalty kicks
 - venues 
     - city
     - name
