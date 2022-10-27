@@ -1,17 +1,40 @@
 # FIFA2023
 
 # Tabell
-- Game
-    - name 
-    - Date
-    - Match (8-dels final 1 etc)
+- Matches
+    - id
+    - date
+    - match     //8-dels final 1 etc. Kommer ni på ett bättre namn för det här fältet får ni gärna säga till
     
+    - head_referee_id
     - venues_id
-    - Teams_id 
+- Scores //Innehåller poängställning för alla matcher vid olika tillfällen
+    - match_id
+    - final_score
+    - full-time
+    - half-time
+
+
+- Goals   //Spelare borde hämta stats för antal mål och assists härifrån
+    - id
+    - game_id
+    - scorer_id
+    - assist_id
+    - time        
+    - type_of_time
+
+
+
+Disciplinaries
+
+    - action
+    - game_id
+    - referee_id
+
 
 - GamesToTeams 
     - team_id (1)
-    - Game_id (1)
+    - game_id (1)
 
 - Team
     - name
@@ -37,11 +60,11 @@
     - shirt number
     - minutes played
     - matches started
-    - red cards
-    - yellow cards
+    - red cards    
+    - yellow cards 
     - shots taken
-    - goals
-    - assists
+    - goals     // Dessa två kan ev hämta info från scores-taben
+    - assists   //
 - coaches?
     - red cards
     - yellow cards
