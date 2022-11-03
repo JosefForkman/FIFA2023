@@ -1,4 +1,4 @@
-DROP TABLE "referee";
+DROP TABLE IF EXISTS "referee";
 CREATE TABLE referee (
 	id int NOT NULL PRIMARY KEY,
 	red_card int DEFAULT 0,
