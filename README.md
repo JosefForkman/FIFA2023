@@ -1,25 +1,25 @@
 # FIFA2023
 
 # Tabell
-- Matches
+- games
     - id
     - date
     - match     //8-dels final 1 etc. Kommer ni på ett bättre namn för det här fältet får ni gärna säga till
     
-    - head_refereeId
+    - headRefereeId
     - venuesId
     - team1Id
     - team2Id
 
 
-- Scores //Innehåller poängställning för alla matcher vid olika tillfällen
+- scores //Innehåller poängställning för alla matcher vid olika tillfällen
     - matchId
     - finalScore
     - full-time
     - half-time
 
 
-- Goals   //Spelare borde hämta stats för antal mål och assists härifrån
+- goals   //Spelare borde hämta stats för antal mål och assists härifrån
     - id
     - gameId
     - scorerId
@@ -29,13 +29,13 @@
 
 
 
-Disciplinaries
+disciplinaries
 
     - action
     - gameId
     - refereeId
 
-- Team
+- teams
     - name
     - abbreviation
     - flagURL
@@ -45,7 +45,7 @@ Disciplinaries
     - scored
     - concededGoals
 
-- People
+- people
     - lastName
     - firstName
 - Goalkeepers
