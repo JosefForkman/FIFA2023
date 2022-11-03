@@ -1,33 +1,32 @@
 # FIFA2023
 
 # Tabell
-- games
-    - id
-    - date
-    - match     //8-dels final 1 etc. Kommer ni på ett bättre namn för det här fältet får ni gärna säga till
-    
-    - headRefereeId
-    - venuesId
-    - team1Id
-    - team2Id
 
+- games
+
+  - id
+  - date
+  - match //8-dels final 1 etc. Kommer ni på ett bättre namn för det här fältet får ni gärna säga till
+
+  - headRefereeId
+  - venuesId
+  - team1Id
+  - team2Id
 
 - scores //Innehåller poängställning för alla matcher vid olika tillfällen
-    - matchId
-    - finalScore
-    - full-time
-    - half-time
 
+  - matchId
+  - finalScore
+  - full-time
+  - half-time
 
-- goals   //Spelare borde hämta stats för antal mål och assists härifrån
-    - id
-    - gameId
-    - scorerId
-    - assistId
-    - time        
-    - typeOfTime
-
-
+- goals //Spelare borde hämta stats för antal mål och assists härifrån
+  - id
+  - gameId
+  - scorerId
+  - assistId
+  - time
+  - typeOfTime
 
 disciplinaries
 
@@ -36,49 +35,49 @@ disciplinaries
     - refereeId
 
 - teams
-    - name
-    - abbreviation
-    - flagURL
-    - wins
-    - draws
-    - losses
-    - scored
-    - concededGoals
+
+  - name
+  - abbreviation
+  - flagURL
+  - wins
+  - draws
+  - losses
+  - scored
+  - concededGoals
 
 - people
-    - lastName
-    - firstName
+  - lastName
+  - firstName
 - Goalkeepers
-    - Goalkeeperstats
-    - shirtNumber
-    - minutesPlayed
-    - matchesStarted
-    - redCards
-    - yellowCards
+  - Goalkeeperstats
+  - shirtNumber
+  - minutesPlayed
+  - matchesStarted
+  - redCards
+  - yellowCards
 - Outfielders
-    - shirtNumber
-    - minutesPlayed
-    - matchesStarted
-    - redCards    
-    - yellowCards 
-    - shotsTaken
-    - goals     // Dessa två kan ev hämta info från scores-taben
-    - assists   //
+  - shirtNumber
+  - minutesPlayed
+  - matchesStarted
+  - redCards
+  - yellowCards
+  - shotsTaken
+  - goals // Dessa två kan ev hämta info från scores-taben
+  - assists //
 - coaches?
-    - redCards
-    - yellowCards
+  - redCards
+  - yellowCards
 - referee?
-    - redCards
-    - yellowCards
-    - freeKicks
-    - penaltyKicks
-- venues 
-    - city
-    - name
-    - capacity
+  - redCards
+  - yellowCards
+  - freeKicks
+  - penaltyKicks
+- venues
+  - city
+  - name
+  - capacity
 
-
-<!-- - schedule 
+<!-- - schedule
     - name
     - Date -->
 
