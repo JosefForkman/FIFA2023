@@ -6,35 +6,34 @@
     - date
     - match     //8-dels final 1 etc. Kommer ni på ett bättre namn för det här fältet får ni gärna säga till
     
-    - head_referee_id
-    - venues_id
+    - head_refereeId
+    - venuesId
+    - team1Id
+    - team2Id
+
+
 - Scores //Innehåller poängställning för alla matcher vid olika tillfällen
-    - match_id
-    - final_score
+    - matchId
+    - finalScore
     - full-time
     - half-time
 
 
 - Goals   //Spelare borde hämta stats för antal mål och assists härifrån
     - id
-    - game_id
-    - scorer_id
-    - assist_id
+    - gameId
+    - scorerId
+    - assistId
     - time        
-    - type_of_time
+    - typeOfTime
 
 
 
 Disciplinaries
 
     - action
-    - game_id
-    - referee_id
-
-
-- GamesToTeams 
-    - team_id (1)
-    - game_id (1)
+    - gameId
+    - refereeId
 
 - Team
     - name
@@ -44,35 +43,35 @@ Disciplinaries
     - draws
     - losses
     - scored
-    - conceded goals
+    - concededGoals
 
 - People
-    - last name
-    - first name
+    - lastName
+    - firstName
 - Goalkeepers
     - Goalkeeperstats
-    - shirt number
-    - minutes played
-    - matches started
-    - red cards
-    - yellow cards
+    - shirtNumber
+    - minutesPlayed
+    - matchesStarted
+    - redCards
+    - yellowCards
 - Outfielders
-    - shirt number
-    - minutes played
-    - matches started
-    - red cards    
-    - yellow cards 
-    - shots taken
+    - shirtNumber
+    - minutesPlayed
+    - matchesStarted
+    - redCards    
+    - yellowCards 
+    - shotsTaken
     - goals     // Dessa två kan ev hämta info från scores-taben
     - assists   //
 - coaches?
-    - red cards
-    - yellow cards
+    - redCards
+    - yellowCards
 - referee?
-    - red cards
-    - yellow cards
-    - free kicks
-    - penalty kicks
+    - redCards
+    - yellowCards
+    - freeKicks
+    - penaltyKicks
 - venues 
     - city
     - name
