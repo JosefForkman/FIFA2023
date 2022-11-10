@@ -179,6 +179,19 @@ where goals.GameId = 1;
 - Short info (teams, flags, abbreviations, score) for the same game as above.
 ```SQL
 
+select team1.name, scores.finalScoreTeam1 as Score, team1.flagURL, team1.abbreviation, team2.name, scores.finalScoreTeam1 as Score, team2.flagURL, team2.abbreviation from games
+inner join teams team1
+on team1Id = team1.id
+inner join teams team2
+on team2Id = team2.id
+inner join scores
+on scores.matchId = games.id
+where games.id = "1";
+
+
+
+
+
 ```
 - List the playoff tree with team abbreviations and -flags, score (if any)/date and time if no result.
 ```SQL
