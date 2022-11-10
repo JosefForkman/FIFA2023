@@ -22,7 +22,17 @@ FROM
 ### Våran
 - List a group table with teams, wins, draws, losses, goal difference and points.
 ```SQL
-
+SELECT
+    "groups"."groupName",
+    teams."name",
+    teams.wins,
+    teams.draws,
+    teams.losses,
+    teams.points,
+    teams."goalDifference"
+FROM
+    "groups"
+    JOIN teams ON "groups"."teamId" = teams.id;
 ```
 - List the top-10 players sorted first by goals, then by assists
 ```SQL
