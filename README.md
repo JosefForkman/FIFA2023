@@ -80,6 +80,19 @@ ORDER BY
 ```
 - List a teams roster with players and coach, goals, assists, shots and disciplinary, matches played, matches started, minutes played. Number of clean sheets and save percentage for the goalkeepers.
 ```SQL
+  select * from people
+  left join outfielders
+  on people.id = outfielders.peopleId
+  left join goalkeepers
+  on people.id = goalkeepers.peopleId
+  left join coaches
+  on people.id = coaches.peopleId
+  inner join teams
+  on outfielders.teamId = teams.id or goalkeepers.teamId = teams.id or coaches.teamId = teams.id
+  where teams.name like "Philippines"
+
+
+
 
 ```
 - Detailed info for a finished game including teams, players, goals, disciplinary, substitutions, referee, venue, date. Every situation often includes one or more players, a time and sometimes additional info
