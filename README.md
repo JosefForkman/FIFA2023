@@ -26,7 +26,16 @@ FROM
 ```
 - List the top-10 players sorted first by goals, then by assists
 ```SQL
-
+SELECT
+	people."firstName",
+	people."lastName",
+    outfielders.goals,
+    outfielders.assists
+FROM
+    outfielders
+JOIN people ON outfielders."peopleId" = people.id
+ORDER BY
+    outfielders.goals, outfielders.assists
 ```
 - List all players that are unavailable due to disciplinary reasons (i.e 2 yellow cards or 1 red card)
 ```SQL
