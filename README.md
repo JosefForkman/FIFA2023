@@ -1,7 +1,54 @@
 # FIFA2023
+## SQL query
+- List all games today
+```SQL
+SELECT * FROM games
+	WHERE "date" = "27/7";
+```
+- List a team’s matches and results.
+```SQL
+SELECT
+    name,
+    wins,
+    draws,
+    losses,
+    points,
+    scored,
+    concededGoals,
+    goalDifference
+FROM
+    teams;
+```
+### Våran
+- List a group table with teams, wins, draws, losses, goal difference and points.
+```SQL
 
+```
+- List the top-10 players sorted first by goals, then by assists
+```SQL
+
+```
+- List all players that are unavailable due to disciplinary reasons (i.e 2 yellow cards or 1 red card)
+```SQL
+
+```
+- List a teams roster with players and coach, goals, assists, shots and disciplinary, matches played, matches started, minutes played. Number of clean sheets and save percentage for the goalkeepers.
+```SQL
+
+```
+- Detailed info for a finished game including teams, players, goals, disciplinary, substitutions, referee, venue, date. Every situation often includes one or more players, a time and sometimes additional info
+```SQL
+
+```
+- Short info (teams, flags, abbreviations, score) for the same game as above.
+```SQL
+
+```
+- List the playoff tree with team abbreviations and -flags, score (if any)/date and time if no result.
+```SQL
+
+```
 # Tabell
-
 - games
 
   - id
