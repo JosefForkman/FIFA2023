@@ -35,11 +35,38 @@ FROM
     outfielders
 JOIN people ON outfielders."peopleId" = people.id
 ORDER BY
-    outfielders.goals, outfielders.assists
+   outfielders.assists, outfielders.goals DESC
+LIMIT 10;
 ```
 - List all players that are unavailable due to disciplinary reasons (i.e 2 yellow cards or 1 red card)
 ```SQL
-
+SELECT
+    people."firstName",
+    people."lastName",
+    outfielders."yellowCards",
+    outfielders."redCards"
+FROM
+    people
+    JOIN outfielders ON outfielders."peopleId" = people.id
+WHERE
+    outfielders."redCards" != 0
+    OR outfielders."yellowCards" != 0
+ORDER BY
+    outfielders."redCards" DESC;
+-----------------------------------------------------------
+SELECT
+    people."firstName",
+    people."lastName",
+    goalkeepers."yellowCards",
+    goalkeepers."redCards"
+FROM
+    people
+    JOIN goalkeepers ON goalkeepers."peopleId" = people.id
+WHERE
+    goalkeepers."redCards" != 0
+    OR goalkeepers."yellowCards" != 0
+ORDER BY
+    goalkeepers."redCards" DESC;
 ```
 - List a teams roster with players and coach, goals, assists, shots and disciplinary, matches played, matches started, minutes played. Number of clean sheets and save percentage for the goalkeepers.
 ```SQL
