@@ -113,9 +113,10 @@ ORDER BY
 
 ```
 - Detailed info for a finished game including teams, players, goals, disciplinary, substitutions, referee, venue, date. Every situation often includes one or more players, a time and sometimes additional info
-```SQL
 
-General info about game
+
+General info about game:
+```SQL
 select 
 	games.date,
 	games.match,
@@ -148,8 +149,10 @@ inner join scores
 on scores.matchId = games.id
 where games.id = 1;
 
+```
 
-GOALS:
+Goals:
+```SQL
 select 
 	goals.goalMinute, 
 	people.firstName as Scorer,
@@ -195,6 +198,29 @@ where games.id = "1";
 ```
 - List the playoff tree with team abbreviations and -flags, score (if any)/date and time if no result.
 ```SQL
+
+select 
+	games.date, 
+	games.match, 
+	games.utc as "Time(UTC)",
+	team1.name as "Team 1",
+	scores.finalScoreTeam1 as "Fulltime",
+	scores."half-timeScoreTeam1" as "Half-time",
+	team1.abbreviation,
+	team1.flagURL, 
+	team2.name as "Team 2",
+	scores.finalScoreTeam1 as "Fulltime",
+	scores."half-timeScoreTeam1" as "Half-time",
+	team2.abbreviation,
+	team2.flagURL 
+from games
+LEFT join teams team1
+on team1.id = games.team1Id
+LEFT join teams team2
+on team2.id = games.team2Id
+left join scores
+on games.id = scores.matchId
+where games.match not like "%Group%"
 
 ```
 # Tabell
