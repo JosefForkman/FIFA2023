@@ -115,6 +115,66 @@ ORDER BY
 - Detailed info for a finished game including teams, players, goals, disciplinary, substitutions, referee, venue, date. Every situation often includes one or more players, a time and sometimes additional info
 ```SQL
 
+General info about game
+select 
+	games.date,
+	games.match,
+	venues.stadium,
+	venues.city,
+	games.attendance,
+	team1.name as Team1,
+	scores.finalScoreTeam1 as "Full-time Score",
+	scores."half-timeScoreTeam1" as "Half-time Score",
+	team2.name as Team2,
+	scores."half-timeScoreTeam2" as "Half-time Score",
+	scores.finalScoreTeam2 as "Full-time Score",
+	refereePeople.firstName as "Referee",
+	refereePeople.lastName
+	
+	
+	
+from games
+inner join venues
+on venues.id = games.venuesId
+inner join referee
+on games.headRefereeeId = referee.id
+inner join people refereePeople
+on refereePeople.id = referee.id
+inner join teams team1
+on team1.id = games.team1Id
+inner join teams team2
+on team2.id = games.team2Id
+inner join scores
+on scores.matchId = games.id
+where games.id = 1;
+
+
+GOALS:
+select 
+	goals.goalMinute, 
+	people.firstName as Scorer,
+	people.lastName, goalmakers.shirtNumber, 
+	assistersPeople.firstName as Assist, 
+	assistersPeople.lastName, 
+	assisters.shirtNumber, 
+	goals.goalMinute, 
+	teams.name as 
+	Country from goals
+inner join people 
+on people.id = goals.scoreId
+inner join outfielders goalmakers
+on people.id = goalmakers.peopleId
+inner join outfielders assisters
+on people.id = assisters.peopleId
+inner join people assistersPeople
+on assistersPeople.id = assisters.peopleId
+inner join games
+on games.id = goals.gameId
+inner join teams
+on goalmakers.teamId = teams.id
+where goals.GameId = 1;
+
+
 ```
 - Short info (teams, flags, abbreviations, score) for the same game as above.
 ```SQL
