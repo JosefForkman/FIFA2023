@@ -77,6 +77,23 @@ WHERE
     OR goalkeepers."yellowCards" != 0
 ORDER BY
     goalkeepers."redCards" DESC;
+------------------------------------------------------------
+Konstig fel
+SELECT DISTINCT 
+    people."firstName",
+    people."lastName",
+    goalkeepers."yellowCards" as "Goalkeepers yellow cards",
+    goalkeepers."redCards" as "Goalkeepers red card",
+    outfielders."yellowCards" as "Outfielders yellow cards",
+    outfielders."redCards" as "Outfielders red card"
+FROM
+    people
+    JOIN goalkeepers, outfielders ON goalkeepers."peopleId" = people.id or outfielders."peopleId" = people.id
+WHERE
+    goalkeepers."redCards" != 0
+    OR goalkeepers."yellowCards" != 0
+ORDER BY
+    goalkeepers."redCards" DESC;
 ```
 - List a teams roster with players and coach, goals, assists, shots and disciplinary, matches played, matches started, minutes played. Number of clean sheets and save percentage for the goalkeepers.
 ```SQL
