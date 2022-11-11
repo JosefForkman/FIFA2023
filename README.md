@@ -44,7 +44,8 @@ JOIN
 ON 
 	"groups"."teamId" = teams.id
 WHERE
-	groups.groupName == "A";
+	groups.groupName == "A"
+ORDER BY groups.points DESC;
 ```
 - List the top-10 players sorted first by goals, then by assists
 ```SQL
