@@ -39,7 +39,12 @@ SELECT
     teams."goalDifference"
 FROM
     "groups"
-    JOIN teams ON "groups"."teamId" = teams.id;
+JOIN 
+	teams 
+ON 
+	"groups"."teamId" = teams.id
+WHERE
+	groups.groupName == "A";
 ```
 - List the top-10 players sorted first by goals, then by assists
 ```SQL
