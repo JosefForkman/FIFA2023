@@ -7,17 +7,24 @@ SELECT * FROM games
 ```
 - List a team’s matches and results.
 ```SQL
-SELECT
-    name,
-    wins,
-    draws,
-    losses,
-    points,
-    scored,
-    concededGoals,
-    goalDifference
-FROM
-    teams;
+SELECT 
+	games.match,
+	games.date,
+	team1.name,
+	scores.finalScoreTeam1 as "Fulltime",
+	scores."half-timeScoreTeam1" as "Half-time",
+	team2.name,
+	scores.finalScoreTeam2 as "Fulltime",
+	scores."half-timeScoreTeam2" as "Half-time"
+	from games
+inner join teams team1
+on team1.id = team1Id 
+inner join teams team2
+on team2.id = team2Id
+inner join scores
+on games.id = scores.matchId
+
+where team1.name like "Norway" or team2.name like "Norway";
 ```
 ### Våran
 - List a group table with teams, wins, draws, losses, goal difference and points.
