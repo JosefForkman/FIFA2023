@@ -71,11 +71,12 @@ FROM
     people
     JOIN outfielders ON outfielders."peopleId" = people.id
 WHERE
-    outfielders."redCards" != 0
-    OR outfielders."yellowCards" != 0
-ORDER BY
-    outfielders."redCards" DESC;
------------------------------------------------------------
+    outfielders."redCards" != 0 OR outfielders."yellowCards" >= 2
+    
+    
+UNION
+
+
 SELECT
     people."firstName",
     people."lastName",
@@ -85,10 +86,7 @@ FROM
     people
     JOIN goalkeepers ON goalkeepers."peopleId" = people.id
 WHERE
-    goalkeepers."redCards" != 0
-    OR goalkeepers."yellowCards" != 0
-ORDER BY
-    goalkeepers."redCards" DESC;
+    goalkeepers."redCards" != 0 OR goalkeepers."yellowCards" >= 2;
 ------------------------------------------------------------
 Konstig fel
 SELECT DISTINCT 
@@ -194,7 +192,7 @@ where goals.GameId = 1;
 - Short info (teams, flags, abbreviations, score) for the same game as above.
 ```SQL
 
-select team1.name, scores.finalScoreTeam1 as Score, team1.flagURL, team1.abbreviation, team2.name, scores.finalScoreTeam1 as Score, team2.flagURL, team2.abbreviation from games
+select team1.name, scores.finalScoreTeam1 as Score, team1.flagURL, team1.abbreviation, team2.name, scores.finalScoreTeam2 as Score, team2.flagURL, team2.abbreviation from games
 inner join teams team1
 on team1Id = team1.id
 inner join teams team2
